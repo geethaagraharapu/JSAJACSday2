@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="postData()">POST</button>
+    <div id="123"></div>
+    <script>
+        async function postData() {
+            const obj={"id":"606","name":"gowtham","age":"23","dob":"2001-02-55"}
+            const x=await fetch('http://localhost:5055/student',{
+                method:"post",
+                headers:{"content-type":"application/json"},
+                body:JSON.stringify(obj)
+            }).then(
+                (value)=>{console.log("Data posted")},
+                (error)=>{console.log("Data not posted")}
+                
+            )
+            
+        }
+    </script>
+</body>
+</html>
